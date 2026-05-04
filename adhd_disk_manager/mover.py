@@ -48,6 +48,19 @@ def execute_move(conn, report_dir: Path, rollback_dir: Path, dry_run: bool, conf
         w = csv.DictWriter(f, fieldnames=list(manifest[0].keys()))
         w.writeheader()
         w.writerows(manifest)
-    conn.execute('INSERT OR REPLACE INTO move_batches(batch_id,created_time,executed_time,status,total_items,moved_items,failed_items,total_size_bytes,rollback_manifest) VALUES (?,?,?,?,?,?,?,?,?)', (batch_id, datetime.utcnow().isoformat(), datetime.utcnow().isoformat(), 'dry_run' if dry_run else 'executed', len(rows), moved, failed, 0, str(mjson)))
+    conn.execute(
+        'INSERT OR REPLACE INTO move_batches(batch_id,created_time,executed_time,status,total_items,moved_items,failed_items,total_size_bytes,rollback_manifest) VALUES (?,?,?,?,?,?,?,?,?)',
+        (
+            batch_id,
+            datetime.utcnow().isoformat(),
+            datetime.utcnow().isoformat(),
+            'dry_run' if dry_run else 'executed',
+            len(manifest),
+            moved,
+            failed,
+            0,
+            str(mjson),
+        ),
+    )
     conn.commit()
     return batch_id, moved, failed
