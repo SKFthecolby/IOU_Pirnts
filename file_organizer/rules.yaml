@@ -1,0 +1,57 @@
+# Destination root for organized output.
+destination_root: "E:/Organized"
+mode:
+  move_files: true
+  move_whole_folders: true
+  preserve_project_folders: true
+  preserve_relative_paths_inside_projects: true
+  never_delete: true
+  never_rename: true
+  require_confirmation: true
+drive_scan:
+  allow_all_drives: true
+  include_removable_drives: false
+  include_network_drives: false
+  excluded_drives: ["C:"]
+category_destinations:
+  CAD: "02_CAD_CAM_CNC/CAD"
+  CAM: "02_CAD_CAM_CNC/CAM"
+  CNC: "02_CAD_CAM_CNC/CNC_Code"
+  3D_Printing: "02_CAD_CAM_CNC/3D_Printing"
+  Code: "03_CODE_REPOS/Loose_Code"
+  Git_Repo: "03_CODE_REPOS/Git_Repos"
+  Documents: "04_DOCS/Documents"
+  Manuals: "04_DOCS/Manuals"
+  PDFs: "04_DOCS/PDFs"
+  Spreadsheets: "04_DOCS/Spreadsheets"
+  Images: "07_MEDIA/Images"
+  Video: "07_MEDIA/Video"
+  Audio: "07_MEDIA/Audio"
+  Archives: "06_ARCHIVES_BACKUPS/Archives"
+  Backups: "06_ARCHIVES_BACKUPS/Backups"
+  Installers: "05_INSTALLERS_SOFTWARE"
+  Firmware: "02_CAD_CAM_CNC/Firmware"
+  Configs: "09_CONFIGS"
+  Logs: "10_LOGS"
+  Unknown: "99_UNKNOWN_REVIEW"
+folder_name_rules:
+  - {contains: "cummins", destination: "01_ACTIVE_PROJECTS/Cummins"}
+  - {contains: "turbo", destination: "01_ACTIVE_PROJECTS/Turbo"}
+file_name_rules:
+  - {contains: "invoice", destination: "04_DOCS/Invoices"}
+extension_rules:
+  ".step": "02_CAD_CAM_CNC/CAD/STEP"
+  ".stp": "02_CAD_CAM_CNC/CAD/STEP"
+  ".dxf": "02_CAD_CAM_CNC/CAD_DXF"
+  ".dwg": "02_CAD_CAM_CNC/CAD_DWG"
+  ".nc": "02_CAD_CAM_CNC/CNC_Code"
+  ".tap": "02_CAD_CAM_CNC/CNC_Code"
+  ".gcode": "02_CAD_CAM_CNC/CNC_Code"
+  ".stl": "02_CAD_CAM_CNC/3D_Printing/STL"
+  ".3mf": "02_CAD_CAM_CNC/3D_Printing/3MF"
+  ".pdf": "04_DOCS/PDFs"
+protected_markers: [".git","package.json","pyproject.toml","requirements.txt","setup.py","CMakeLists.txt","Makefile","Cargo.toml","go.mod",".sln",".csproj",".vcxproj","platformio.ini","README.md","LICENSE","node_modules","venv",".venv","build","dist","src","include","docs","examples"]
+never_move_paths_contains: ["Windows","Program Files","Program Files (x86)","AppData","$Recycle.Bin","System Volume Information"]
+conflict_policy:
+  default: "ask"
+  options: ["ask","skip","keep_both","overwrite_never"]
