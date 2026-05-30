@@ -2,7 +2,7 @@ from __future__ import annotations
 from pathlib import Path
 from datetime import datetime
 import csv
-from safe_paths import safe_destination
+from file_organizer.safe_paths import safe_destination
 
 
 def build_plan(conn, rules: dict, report_dir: Path):

@@ -1,1 +1,0 @@
-"""ADHD Disk Manager package."""

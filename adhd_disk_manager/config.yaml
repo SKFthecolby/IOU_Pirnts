@@ -1,9 +1,0 @@
-database_path: "inventory.db"
-rules_path: "rules.yaml"
-reports_dir: "_file_index_reports"
-logs_dir: "logs"
-rollback_dir: "rollback_manifests"
-scan:
-  follow_symlinks: false
-  batch_size: 250
-  skip_hidden: false
