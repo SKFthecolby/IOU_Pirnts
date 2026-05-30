@@ -1,4 +1,4 @@
-# IOU_Pirnts — File Organizer Walkthrough
+# File_Organizer Walkthrough
 
 This repository contains a **safe file organization tool** located in `file_organizer/`.
 
